@@ -1,0 +1,15 @@
+{
+    "name": "neo-blockchain-toolkit",
+    "displayName": "NEO Blockchain Toolkit",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+    "extensionPack": [ 
+        "publisher.extensionName"
+    ]
+}
