@@ -24,6 +24,6 @@
         "url": "https://github.com/ngdseattle/neo-blockchain-toolkit.git"
     },
     "extensionPack": [
-        "publisher.extensionName"
+        "ngd-seattle.neo-visual-devtracker"
     ]
 }
