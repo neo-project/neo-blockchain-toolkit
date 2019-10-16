@@ -1,0 +1,31 @@
+variables:
+  configuration: release
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: 'install'
+
+- task: Npm@1
+  displayName: 'npm run package'
+  inputs:
+    command: 'custom'
+    customCommand: 'run package'
+
+- task: CopyFiles@2
+  displayName: 'copy VSIX package to Artifact Staging Directory'
+  inputs:
+    SourceFolder: '.'
+    Contents: '*.vsix'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/extension'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'publish vsix build artifacts'
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)/extension'
+    artifactName: 'VSIX-package'
