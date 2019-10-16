@@ -3,7 +3,7 @@
   "version": "0.5-preview",
   "publicReleaseRefSpec": [
     "^refs/heads/master$",
-    "^refs/heads/v\\d+(?:\\.\\d+)?$"
+    "^refs/heads/release/v\\d+(?:\\.\\d+)?$"
   ],
   "cloudBuild": {
     "buildNumber": {
@@ -11,6 +11,7 @@
     }
   },
   "release": {
+    "branchName": "release/v{version}",
     "firstUnstableTag": "preview"
   }
 }
