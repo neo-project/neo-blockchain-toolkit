@@ -1,7 +1,6 @@
 .vscode/**
 .vscode-test/**
 .gitignore
-vsc-extension-quickstart.md
 gulpfile.ts
 azure-ci.yml
 version.json
