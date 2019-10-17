@@ -4,6 +4,13 @@ variables:
 pool:
   vmImage: 'windows-2019'
 
+trigger:
+  batch: false
+  branches:
+    include:
+      - master
+      - release/*
+
 steps:
 
 - task: Npm@1
