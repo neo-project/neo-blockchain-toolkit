@@ -4,3 +4,4 @@
 gulpfile.ts
 azure-ci.yml
 version.json
+quickstart.md

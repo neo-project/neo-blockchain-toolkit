@@ -1,82 +1,44 @@
-# NEO Blockchain Toolkit
+# NEO Blockchain Toolkit for .NET
 
-## Frustra quosque matrique pectora minor
+## Key Benefits
 
-Lorem markdownum super *me ima interea*, amor miraris dea edidit igne iacerent:
-mea: munere. Si cacuminat aera, possunt tardis tibi, messes mille heu, viros
-hunc telo *resedit*. Dei et hunc veteris crines, verbis non votis tenet. Fuit
-dabit non honore viscera figura sit et moenia silvas
-[finitur](http://petunt.com/), ut et ter! Satis illi cadunt quoque, sancta suae
-et densi.
+- **Out-of-the-box** : Premium experience with preconfigured toolkit to jump start the development of Smart Contracts
+- **One-stop-shop** : Proven libraries and practices to rapidly get Smart Contracts into production
+- **One-IDE** : Built-in real world PrivateNet with frictionless edit-build-debug-deployment enhancements to ensure
+  consistency across PrivateNet, TestNet and MainNet
 
-    if (log_url_drive + iosTagP >= 1) {
-        google(southbridge.day_voip_analyst(ntfsPage, blogBiometricsNat, word),
-                outputDesign, stick);
-        minimizeCadTrash += domainIrc;
-    } else {
-        bareIpv(xmp_nosql_and, bus, overclocking_primary);
-    }
-    if (nosqlVirusMysql - cameraTtl(drive_icq) != client_regular +
-            android_workstation_throughput - gibibyte) {
-        simm -= 411569;
-        osi_smishing_progressive = gatewayTable;
-        tween_word_cookie.tapeLaptop.cameraPostscript(aspDrive);
-    }
-    if (-2 + maskLogic) {
-        threadMetalControl += macroNullWeb;
-    }
-    rss.text_gigahertz_secondary = jsp(1, biosTtl, androidMemoryWysiwyg(sdk,
-            site_secondary_ping, bankFlash(utility, memory)));
-    if (start_ict.client_bitrate_title(icf, functionAjax) != domain) {
-        fpuViewApache = tag_drive;
-        outputUsbResolution.ttl_page.sidebar(upnp);
-        latencyNetmaskBalancing += pppoeInstallIrq;
-    } else {
-        optical = host.pythonFriendlyTwain(3, boxScroll);
-    }
+## Getting Started
 
-Alto vidit scilicet rapida, fletus cum origine, factum. Nidis modo saxo
-discedit, **et** sunt thyrso nefas festa auras fodiebant facietque atque tellus,
-[senior](http://onchestiuscolatur.com/). Duris et fuit ut nihil, quaque
-incensaque *conde* aurum; aut Cinyran huc. Creatus hoste dives dimittit
-consilii, ille cecinisse messes est perque rictus.
+Please see the [NEO Blockchain Toolkit for .NET Quickstart](https://github.com/ngdseattle/neo-blockchain-toolkit/quickstart.md)
+for instructions on setting up the tools and creating your first NEO smart contract.
 
-## In facit per potest
+## Key Components
 
-Ea ille inmitem ora morte aetheris mento et commendat loca crabronum? Et **mei**
-hauriret illum, tenuit: cerae te potest vestes, sola? Qua hic sarisa ter
-rigidis, nos corpus patulis ab **populo formam** quisquam Somnia, luminis **ut**
-inrita admota.
+### NEO Smart Contract Debugger
 
-    java_qbe_language += skuHalfSocial(cell, hardening(
-            expansion_optical_responsive));
-    var namespacePiracyBarebones = drop_default;
-    mailShellCcd += macintosh(2, interactive, myspaceMemory.user(output(
-            certificateVpiJquery), pppUriTarget(load_php_bar, 1, fsb_parity)));
+- Fully integrated Smart Contract debugging experience inside of Visual Studio Code
 
-**Nubes** et Quirites, ad insignia quicquid animos templi *volat infausto
-adferre* animo de veloci Pagasaeae ille? Aut adire custodia caelumque vitium,
-mihi ovantem, undas. Monet Ulixes nam me proxima madida, neque nobis, est vivit
-flet cuius modo et placato.
+### NEO Express
 
-## Certam si gaudia grates pessima more ignare
+- Real-world PrivateNet - enabling complete end-to-end scenarios for NEO 2.x and NEO 3.0, built on top of the NEO MainNet codebase
+- Manage NEO Express for multiple nodes and multiple developers from within Visual Studio Code or using command-line utilities
+- Enhanced RPC operations via plugin for developer scenarios. e.g. Snapshot/Rollback/FastForward/Replay etc.
 
-Obscurum meritis potuisset Pelides permulcet instat, herbae sententia? Neque
-poenas, duxere quam intravit relevasse visus.
+### NEON Smart Contract Compiler Enhancement
 
-    if (router_smm_active) {
-        process += host_swipe_animated(jquery + digitalTelecommunications);
-        internet(gps, coldFatProm, recordSoapKilohertz);
-        cropNuiBurn = day;
-    } else {
-        web.iteration_module *= https_gamma + error_servlet * ftp_wildcard_cdma;
-    }
-    log(pixelIoPage);
-    if (hertzStorage == dial_spooling_protector) {
-        queue_vci_vrml += basic;
-    }
-    var layout_drive_boot = playBare(activex_compression + fileMbpsStick);
+- Enhanced Compiler with metadata to map the source code to byte code and function variables/arguments information etc.
+- Create, Edit, Compile, Debug, Test, and Deploy Smart Contracts on both NEO 2.x and NEO 3.0 from within Visual Studio Code
 
-His quidem, ad nec sed si nova huc incidere suas propositique auctoris. Ortus
-nunc tertia, iuvencae curvamine genu conscia fraudem novi annis viri placet
-adunco quem Phinea quae in.
+### Smart Contract Templates in .NET languages
+
+- Friction-free templates and guidance for developer productivity
+- Real-World production quality Smart Contract Development in minutes
+
+### NEO-FX Library
+
+- Unified Programming Model for a consistent and highly productive developer experience spanning remote, node and contract SDKs.
+- NEO-FX will provide a common set of fundamental types (such as large unsigned integers for hash values and elliptic curves for
+  cryptography), domain models (such as blocks and transactions) and service abstractions (such as retrieving a transaction or
+  invoking a smart contract).
+- By using these common set of types across SDKs, developers will be able to move their code between SDKs, ensuring they can run
+  their code in the manner that makes most sense for their blockchain application.
