@@ -16,7 +16,8 @@ to use NEO-Express.
 For this quickstart, there are two [.NET Core global tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
 and a template pack to install via the dotnet command line tool. There is also
 a VSCode extension that needs to be installed manually. In addition to this
-quickstart, there is also a [command reference document](command-reference.md)
+quickstart, there is also a 
+[command reference document](https://github.com/neo-project/neo-debugger/blob/master/command-reference.md)
 for NEO-Express.
 
 Open a terminal window and execute the following commands to install the
