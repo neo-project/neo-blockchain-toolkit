@@ -1,5 +1,7 @@
 # NEO Blockchain Toolkit for .NET
 
+[![Build Status](https://dev.azure.com/NGDSeattle/Public/_apis/build/status/ngdseattle.neo-blockchain-toolkit?branchName=master)](https://dev.azure.com/NGDSeattle/Public/_build/latest?definitionId=20&branchName=master)
+
 ## Key Benefits
 
 - **Out-of-the-box** : Premium experience with preconfigured toolkit to jump start the development of Smart Contracts
