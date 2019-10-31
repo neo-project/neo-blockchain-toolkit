@@ -1,5 +1,5 @@
 <!-- markdownlint-enable -->
-# NEO Blockchain Toolkit for .NET Quickstart
+# Neo Blockchain Toolkit for .NET Quickstart
 
 > Note, this quickstart has only been tested on Windows 10 and Ubuntu 18.04.
 
@@ -9,7 +9,7 @@
 - [Visual Studio Code (v1.37 or later)](https://code.visualstudio.com/Download)
 
 Ubuntu users must also install libsnappy-dev and libc6-dev via apt-get in order
-to use NEO-Express.
+to use Neo-Express.
 
 ## Installation
 
@@ -18,7 +18,7 @@ and a template pack to install via the dotnet command line tool. There is also
 a VSCode extension that needs to be installed manually. In addition to this
 quickstart, there is also a 
 [command reference document](https://github.com/neo-project/neo-debugger/blob/master/command-reference.md)
-for NEO-Express.
+for Neo-Express.
 
 Open a terminal window and execute the following commands to install the
 tools via dotnet command line:
@@ -62,7 +62,7 @@ Example:neon abc.dll --compatible
 
 In your terminal window, create an empty directory called "HelloWorld".
 Change to that directory and invoke the `dotnet new neo-contract -de` command.
-This will create a simple NEO smart contract that writes Hello World to
+This will create a simple Neo smart contract that writes Hello World to
 blockchain storage.
 
 > Note, by default the generated neo-contract project compiles the smart contract
@@ -98,7 +98,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 > Note, you have to use `dotnet publish` instead of `dotnet build`
 > because of a [bug](https://github.com/neo-project/neo-devpack-dotnet/issues/78)
-> in the NEON compiler. Once this bug has been fixed, the templates
+> in the NeoN compiler. Once this bug has been fixed, the templates
 > will be updated to run as part of the build target instead of the
 > publish target.
 
@@ -109,12 +109,12 @@ launch VSCode by executing `code .`. This will bring an instance of
 VSCode in the folder you created the smart contract in.
 
 Before you can run the contract in the debugger, you need to create a
-launch configuration. The NEO Contract Debugger makes this very easy.
+launch configuration. The Neo Contract Debugger makes this very easy.
 
 - From the top-level Debug menu, select "Add Configuration"
-- From the Select Environment input box, select "NEO Contract"
+- From the Select Environment input box, select "Neo Contract"
 
-The NEO Contract Debugger will automatically create a launch profile
+The Neo Contract Debugger will automatically create a launch profile
 for every .AVM file it locates in the workspace. This launch
 profile allows you to specify arguments for the entry-point method,
 key/value pairs for emulated storage and the emulated behavior of
@@ -131,11 +131,11 @@ following debug experiences work:
   - Note, the Hello World contract doesn't have any local parameters
     or variables.
 
-## Create and Run a NEO-Express blockchain
+## Create and Run a Neo-Express blockchain
 
 Now that we have a smart contract, we need a blockchain to deploy it to.
-NEO-Express is a developer-focused NEO blockchain client. Create a new
-NEO-Express blockchain with the `create` command.
+Neo-Express is a developer-focused Neo blockchain client. Create a new
+Neo-Express blockchain with the `create` command.
 
 ``` shell
 $ neo-express create
@@ -144,18 +144,18 @@ Created 1 node privatenet at /home/harry/Source/HelloWorld/default.neo-express.j
           Do not use these accounts on MainNet or in any other system where security is a concern.
 ```
 
-> Note the warning - NEO-Express does not encrypt private keys.
+> Note the warning - Neo-Express does not encrypt private keys.
 
-By default, NEO-Express creates a single node blockchain. For development purposes,
+By default, Neo-Express creates a single node blockchain. For development purposes,
 a single node blockchain is often preferred. Furthermore, the checkpoint features
-of NEO-Express only work on a single node blockchain. You can create a four or
+of Neo-Express only work on a single node blockchain. You can create a four or
 seven node blockchain with the --count option.
 
-NEO-Express stores all the information about the blockchain instance in the
+Neo-Express stores all the information about the blockchain instance in the
 default.neo-express.json file. If you look in this file right now, you'll see
 information about the single consensus node for this blockchain we created.
 
-Now that you have created the NEO-Express blockchain instance, you can run it.
+Now that you have created the Neo-Express blockchain instance, you can run it.
 Since this is a single-node blockchain, you don't need to specify which node of
 the blockchain to run. The run command will start the blockchain and continue
 logging information about new blocks to the console until you shut down the node
@@ -180,18 +180,18 @@ $ neo-express run --seconds-per-block 1
 ```
 
 You can control the block generation period via the --seconds-per-block option
-(-s for short) of the run command. By default, NEO-Express generates a new block
+(-s for short) of the run command. By default, Neo-Express generates a new block
 every fifteen seconds, just like MainNet. However, for development purposes, it's
 often desirable to run the blockchain faster than that. The block generation
 period affects how quickly developers can view results of operations like transfer
 and it affects how quickly accounts accumulate GAS.
 
-## Manage NEO in the NEO-Express blockchain
+## Manage Neo in the Neo-Express blockchain
 
 Since this terminal window is running the blockchain, open another terminal
 window in the same directory so you can interact with the running blockchain.
-In the new terminal window, we will use NEO-Express to create a standard wallet
-and transfer the genesis NEO tokens to that wallet.
+In the new terminal window, we will use Neo-Express to create a standard wallet
+and transfer the genesis Neo tokens to that wallet.
 
 ``` shell
 $ neo-express wallet create testWallet
@@ -217,13 +217,13 @@ $ neo-express transfer neo 100000000 genesis testWallet
 }
 ```
 
-> Note, currently NEO-Express dumps JSON information about operations to the
+> Note, currently Neo-Express dumps JSON information about operations to the
 > console. A future update will display results in a more user-friendly fashion.
 
-NEO-Express allows you to refer to wallet account by an easy-to-remember names
+Neo-Express allows you to refer to wallet account by an easy-to-remember names
 instead of by Base58 encoded addresses like `Ab6ENUi6UpWg6cQGUE3DEh3zam9yTJir6s`.
 There are a few reserved names, such as 'genesis'. Genesis refers to the multi-
-signature account that receives the genesis NEO created for every new blockchain.
+signature account that receives the genesis Neo created for every new blockchain.
 
 We can see the result of our transfer via the show account command
 
@@ -247,9 +247,9 @@ $ neo-express show account testWallet
 > of the transfer. Running the blockchain faster than the fifteen second default
 > means you don't have to wait as long for operations to complete!
 
-## Claim GAS in the NEO-Express blockchain
+## Claim GAS in the Neo-Express blockchain
 
-Because we transferred all the genesis NEO and the blockchain is creating a new
+Because we transferred all the genesis Neo and the blockchain is creating a new
 block every second, GAS will build up pretty quickly in the testWallet account.
 We can see how much GAS is available with the `show gas` command.
 
@@ -306,11 +306,11 @@ $ neo-express show account testWallet
 }
 ```
 
-## Deploy a Smart Contract to NEO-Express blockchain
+## Deploy a Smart Contract to Neo-Express blockchain
 
-With a running NEO-Express blockchain and a standard wallet account with plenty
+With a running Neo-Express blockchain and a standard wallet account with plenty
 of GAS, we can deploy our smart contract to the blockchain. We start by importing
-the contract into NEO-Express.
+the contract into Neo-Express.
 
 ``` shell
 $ neo-express contract import bin/Debug/netstandard2.0/publish/
@@ -319,10 +319,10 @@ Does this contract use dynamic invoke? [y/N] n
 Is this contract payable? [y/N] n
 ```
 
-NEO-Express needs to know if the contract uses storage, dynamic invoke or if
+Neo-Express needs to know if the contract uses storage, dynamic invoke or if
 the contract is payable in order to deploy the contract.
 
-> For NEO 3, this information will be in the smart contract manifest file.
+> For Neo 3, this information will be in the smart contract manifest file.
 
 The imported contract can now be deployed via the `contract deploy` command.
 You must specify a wallet account to pay the deployment GAS price. You can get
@@ -367,7 +367,7 @@ $ neo-express contract get HelloWorld
 }
 ```
 
-## Invoke a Smart Contract on the NEO-Express blockchain
+## Invoke a Smart Contract on the Neo-Express blockchain
 
 The last step is to invoke the deployed contract. We use the `contract invoke`
 command for that.

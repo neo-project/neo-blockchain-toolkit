@@ -1,4 +1,4 @@
-# NEO Blockchain Toolkit
+# Neo Blockchain Toolkit
 
 All notable changes to this project will be documented in this file.
 
