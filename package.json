@@ -24,7 +24,8 @@
         "url": "https://github.com/ngdseattle/neo-blockchain-toolkit.git"
     },
     "extensionPack": [
-        "ngd-seattle.neo-visual-devtracker"
+        "ngd-seattle.neo-visual-devtracker",
+        "ngd-seattle.neo-contract-debug"
     ],
     "scripts": {
         "package": "npm run setversion && vsce package",
