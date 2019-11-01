@@ -2,27 +2,32 @@
     "name": "neo-blockchain-toolkit",
     "publisher": "ngd-seattle",
     "displayName": "Neo Blockchain Toolkit",
-    "description": "",
+    "description": "Collection of Neo blockchain Visual Studio Code extensions",
     "version": "0.0.0",
     "icon": "neo-logo-256.png",
     "galleryBanner": {
         "color": "#242424",
         "theme": "dark"
     },
+    "author": "Neo Global Development Seattle",
     "engines": {
         "vscode": "^1.37.0"
     },
     "categories": [
         "Extension Packs"
     ],
-    "homepage": "https://github.com/ngdseattle/neo-blockchain-toolkit",
+    "homepage": "https://github.com/neo-project/neo-blockchain-toolkit",
     "bugs": {
-        "url": "https://github.com/ngdseattle/neo-blockchain-toolkit/issues"
+        "url": "https://github.com/neo-project/neo-blockchain-toolkit/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/ngdseattle/neo-blockchain-toolkit.git"
+        "url": "https://github.com/neo-project/neo-blockchain-toolkit.git"
     },
+    "keywords": [
+        "Neo",
+        "Blockchain",
+    ],
     "extensionPack": [
         "ngd-seattle.neo-visual-devtracker",
         "ngd-seattle.neo-contract-debug"

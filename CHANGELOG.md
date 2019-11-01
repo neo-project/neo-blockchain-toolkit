@@ -19,9 +19,12 @@ may not exactly match a publicly released version.
 
 - Added Neo Smart Contract Debugger to extension pack.
 
+## [0.5.12] - 2019-11-01
+
 ### Changed
 
-- updated Neo branding as per https://neo.org/presskit
+- Moved project home to official [Neo project GitHub organization](https://github.com/neo-project).
+- Updated Neo branding as per [official press kit](https://neo.org/presskit).
 
 ## [0.5] - 2019-10-17
 

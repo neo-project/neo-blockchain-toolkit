@@ -11,7 +11,7 @@
 
 ## Getting Started
 
-Please see the [Neo Blockchain Toolkit for .NET Quickstart](https://github.com/ngdseattle/neo-blockchain-toolkit/blob/master/quickstart.md)
+Please see the [Neo Blockchain Toolkit for .NET Quickstart](https://github.com/neo-project/neo-blockchain-toolkit/blob/master/quickstart.md)
 for instructions on setting up the tools and creating your first Neo smart contract.
 
 ## Key Components
