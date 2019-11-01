@@ -1,4 +1,4 @@
-# NEO Blockchain Toolkit
+# Neo Blockchain Toolkit
 
 All notable changes to this project will be documented in this file.
 
@@ -12,6 +12,13 @@ of the commit that generated the build. As such, released versions of this exten
 will not have contiguous patch numbers. Initial major and minor releases will be documented
 in this file without a patch number. Patch version will be included for bug fix releases, but
 may not exactly match a publicly released version.
+
+## [0.5.12] - 2019-11-01
+
+### Changed
+
+- Moved project home to official [Neo project GitHub organization](https://github.com/neo-project).
+- Updated Neo branding as per [official press kit](https://neo.org/presskit).
 
 ## [0.5] - 2019-10-17
 
