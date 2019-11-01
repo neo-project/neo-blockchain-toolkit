@@ -42,6 +42,6 @@
         "nerdbank-gitversioning": "^3.0.26",
         "ts-node": "^8.3.0",
         "typescript": "^3.3.1",
-        "vsce": "^1.68.0"
+        "vsce": "^1.69.0"
     }
 }
