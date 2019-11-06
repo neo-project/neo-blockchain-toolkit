@@ -1,6 +1,6 @@
 # Neo Blockchain Toolkit for .NET
 
-[![Build Status](https://dev.azure.com/NGDSeattle/Public/_apis/build/status/ngdseattle.neo-blockchain-toolkit?branchName=master)](https://dev.azure.com/NGDSeattle/Public/_build/latest?definitionId=20&branchName=master)
+[![Build Status](https://dev.azure.com/NGDSeattle/Public/_apis/build/status/neo-project.neo-blockchain-toolkit?branchName=master)](https://dev.azure.com/NGDSeattle/Public/_build/latest?definitionId=25&branchName=master)
 
 ## Key Benefits
 
