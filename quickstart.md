@@ -3,42 +3,37 @@
 
 > Note, this quickstart has only been tested on Windows 10 and Ubuntu 18.04.
 
+## Neo Blockchain Toolkit Samples
+
+* [Domain](https://github.com/ngdseattle/domain-sample)
+* [CNEO](https://github.com/ngdseattle/cneo-sample)
+
 ## Prerequisites
 
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-- [Visual Studio Code (v1.37 or later)](https://code.visualstudio.com/Download)
+> Note, both .NET core 2.2 and 3.0 are required.
+
+* [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+* [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+* [Visual Studio Code (v1.37 or later)](https://code.visualstudio.com/Download)
+* [Neo Blockchain Toolkit for .NET](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-blockchain-toolkit)
 
 Ubuntu users must also install libsnappy-dev and libc6-dev via apt-get in order
 to use Neo-Express.
 
 ## Installation
 
-For this quickstart, there are two [.NET Core global tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
-and a template pack to install via the dotnet command line tool. There is also
-a VSCode extension that needs to be installed manually. In addition to this
-quickstart, there is also a 
-[command reference document](https://github.com/neo-project/neo-debugger/blob/master/command-reference.md)
-for Neo-Express.
+In addition to the [Neo Blockchain Toolkit](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-blockchain-toolkit)
+VSCode extension, there are two [.NET Core global tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools)
+and a template pack that need to be installed via the [dotnet command line interface](https://docs.microsoft.com/en-us/dotnet/core/tools/).
 
-Open a terminal window and execute the following commands to install the
-tools via dotnet command line:
+Open a terminal window and execute the following commands to install the additional
+tools and template pack:
 
 ``` shell
 dotnet tool install -g Neo.Express
 dotnet tool install -g Neo.neon-de
 dotnet new -i Neo.Contract.Templates
 ```
-
-The VSCode smart contract debugger can be downloaded from the
-[GitHub repo release page](https://github.com/neo-project/neo-debugger/releases).
-As of this writing, the current release is
-[v0.5.15](https://github.com/neo-project/neo-debugger/releases/tag/v0.5.15).
-Download the associated .VSIX file for the latest release and follow the
-[official VSCode documentation](https://code.visualstudio.com/docs/editor/extension-gallery#_install-from-a-vsix)
-to install the .VSIX file.
-
-> Note, this manual VSIX install process is specific to the early access preview.
-> Eventually, this  packages will be distributed via the VSCode marketplace.
 
 If this is the first time you've used
 [.NET Core global tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools),
@@ -49,10 +44,10 @@ The tools  should echo back the version number. It will look similar to this:
 
 ``` shell
 $ neo-express --version
-0.8.11+92c8779687
+0.9.82+01708bcc03
 
 $ neon-de
-Neo.Compiler.MSIL console app v2.4.1.1
+Neo.Compiler.MSIL console app v2.5.0.0
 need one param for DLL filename.
 [--compatible] disable nep8 function and disable SyscallInteropHash
 Example:neon abc.dll --compatible
@@ -66,11 +61,12 @@ This will create a simple Neo smart contract that writes Hello World to
 blockchain storage.
 
 > Note, by default the generated neo-contract project compiles the smart contract
-> with the official [neon compiler](https://github.com/neo-project/neo-devpack-dotnet).
-> The `-de` option configures the generated project to use the "debugger enhancements"
-> branch of the neon compiler instead. Eventually, the debugger enhancements will
-> be merged into the official neon release. In the meantime, this branch of the
-> neon compiler is needed in order to enable smart contracts to be debugged in VSCode.
+> with the official [Neo for .NET (aka NEON) compiler](https://github.com/neo-project/neo-devpack-dotnet).
+> The `-de` option configures the generated project to use the
+> ["debugger enhancements" branch](https://github.com/ngdseattle/neo-devpack-dotnet/tree/master-de)
+> of the NEON compiler instead. Eventually, the debugger enhancements will
+> be merged into the official NEON release. In the meantime, this branch of the
+> NEON compiler is needed in order to enable smart contracts to be debugged in VSCode.
 
 ## Build the Smart Contract
 
@@ -85,7 +81,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Restore completed in 294.77 ms for /home/harry/Source/HelloWorld/HelloWorld.csproj.
   HelloWorld -> /home/harry/Source/HelloWorld/bin/Debug/netstandard2.0/HelloWorld.dll
   HelloWorld -> /home/harry/Source/HelloWorld/bin/Debug/netstandard2.0/publish/
-  Neo.Compiler.MSIL console app v2.4.1.1
+  Neo.Compiler.MSIL console app v2.5.0.0
   Find entrypoint:System.Void HelloWorld::Main()
   convert succ
   gen debug succ
@@ -98,7 +94,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 > Note, you have to use `dotnet publish` instead of `dotnet build`
 > because of a [bug](https://github.com/neo-project/neo-devpack-dotnet/issues/78)
-> in the NeoN compiler. Once this bug has been fixed, the templates
+> in the NEON compiler. Once this bug has been fixed, the templates
 > will be updated to run as part of the build target instead of the
 > publish target.
 
@@ -111,27 +107,29 @@ VSCode in the folder you created the smart contract in.
 Before you can run the contract in the debugger, you need to create a
 launch configuration. The Neo Contract Debugger makes this very easy.
 
-- From the top-level Debug menu, select "Add Configuration"
-- From the Select Environment input box, select "Neo Contract"
+* From the top-level Debug menu, select "Add Configuration"
+* From the Select Environment input box, select "Neo Contract"
 
 The Neo Contract Debugger will automatically create a launch profile
 for every .AVM file it locates in the workspace. This launch
-profile allows you to specify arguments for the entry-point method,
-key/value pairs for emulated storage and the emulated behavior of
-[Runtime.CheckWitness](https://docs.neo.org/docs/en-us/reference/scapi/fw/dotnet/neo/Runtime/CheckWitness.html).
+profile allows you to specify a variety of execution configuration values.
 You don't need to change anything to run the HelloWorld contract,
 so simply hit "F5" or select Debug -> Start Debugging from the menu.
 This will launch the HelloWorld contact for debugging. From here, the
 following debug experiences work:
 
-- You can Continue, Step Into, Step Over and Step In
-- You can set breakpoints
-- You can inspect the contents of emulated storage
-- You can inspect the value of local parameters and variables.
-  - Note, the Hello World contract doesn't have any local parameters
+* You can Continue, Step Into, Step Over and Step In
+* You can set breakpoints
+* You can inspect the contents of emulated storage
+* You can inspect the value of local parameters and variables.
+  * Note, the Hello World contract doesn't have any local parameters
     or variables.
 
 ## Create and Run a Neo-Express blockchain
+
+> Note, In addition to this quickstart, there is also a
+> [command reference document](https://github.com/neo-project/neo-express/blob/master/docs/command-reference.md)
+> for Neo-Express.
 
 Now that we have a smart contract, we need a blockchain to deploy it to.
 Neo-Express is a developer-focused Neo blockchain client. Create a new
@@ -181,17 +179,51 @@ $ neo-express run --seconds-per-block 1
 
 You can control the block generation period via the --seconds-per-block option
 (-s for short) of the run command. By default, Neo-Express generates a new block
-every fifteen seconds, just like MainNet. However, for development purposes, it's
-often desirable to run the blockchain faster than that. The block generation
+every fifteen seconds, just like NEO MainNet. However, for development purposes,
+it's often desirable to run the blockchain faster than that. The block generation
 period affects how quickly developers can view results of operations like transfer
 and it affects how quickly accounts accumulate GAS.
 
-## Manage Neo in the Neo-Express blockchain
+## Examine the blockchain with Visual DevTracker
 
-Since this terminal window is running the blockchain, open another terminal
-window in the same directory so you can interact with the running blockchain.
-In the new terminal window, we will use Neo-Express to create a standard wallet
-and transfer the genesis Neo tokens to that wallet.
+With the blockchain running in a terminal window, we can explore the Neo-Express
+instance using the Visual DevTracker. You open Visual DevTracker by selecting a
+blockchain from the Neo RPC Servers window in the VSCode Explorer view.
+
+![Neo-Express config detection](https://raw.githubusercontent.com/neo-project/neo-blockchain-toolkit/master/visual-devtracker-1.png)
+
+You can immediately get a feel for the tracker by selecting either MainNet or
+TestNet. Those blockchains will have significantly more interesting blocks in
+them than our hello world blockchain does.
+
+You'll notice tha the Neo express blockchain instance can be started or stopped
+from this window. Currently, neo-express is running in a different terminal
+window. If you want, you can shut down that window and run Neo-Express from inside
+VSCode by pressing the Play arrow button for Node #1 in the Neo RPC Servers Window.
+You can also right click the node and select "Start Neo Express" from the context
+menu. Neo-Express output will be displayed in the VSCode integrated terminal window.
+Once Neo-Express is running, you can select Node #1 to open the Block Explorer
+window of Visual DevTracker.
+
+If you've ever used a blockchain tracker before, the Visual DevTracker should
+feel very familiar. If you haven't, Visual DevTracker allows you to inspect
+individual blocks and transactions in the blockchain. From the Blocks window, select
+any block index to inspect that specific block. Within the Block window, you can
+select any of the contained transactions by ID to get more information.
+
+Note the "Hide empty blocks" checkbox in the top level Blocks window of Visual
+DevTracker. If you select that checkbox now, all but the initial block (also known
+as the "genesis" block) will be filtered out. As you make transfer NEO, claim GAS
+and deploy contracts over the course of this quickstart, you can return to the
+Visual DevTracker to inspect the blocks associated with these operations.
+
+## Manage NEO in the Neo-Express blockchain
+
+With Neo-express running either in VSCode or a separate terminal window, open
+a new terminal window in the same directory you created the blockchian in so you
+can interact with the running blockchain. In the new terminal window, we will use
+Neo-Express to create a standard wallet and transfer the genesis Neo tokens to
+that wallet.
 
 ``` shell
 $ neo-express wallet create testWallet
@@ -200,7 +232,7 @@ testWallet
     Note: The private keys for the accounts in this wallet are *not* encrypted.
           Do not use these accounts on MainNet or in any other system where security is a concern.
 
-$ neo-express transfer neo 100000000 genesis testWallet
+$ neo-express transfer neo all genesis testWallet
 {
   "contract-context": {
     "type": "Neo.Network.P2P.Payloads.ContractTransaction",
@@ -251,18 +283,24 @@ $ neo-express show account testWallet
 
 Because we transferred all the genesis Neo and the blockchain is creating a new
 block every second, GAS will build up pretty quickly in the testWallet account.
-We can see how much GAS is available with the `show gas` command.
+We can see how much GAS is available with the `show unclaimed` command.
 
-> Note, even at one block every second, it will take a few minutes to build up
-> enough GAS to complete this quickstart. Now is a good time for a coffee break.
+> Note, in a previous version of Neo-Express, you viewed account GAS via the
+> `show gas` command. It was changed in v0.9 to `show unclaimed` in order to
+> align with the [corresponding official Neo plugin name](https://docs.neo.org/docs/en-us/reference/rpc/latest-version/api/getunclaimed.html)
+
 
 ``` shell
 $ neo-express show gas testWallet
 {
   "unavailable": 1112,
-  "available": 0
+  "available": 0,
+  "unclaimed": 1112,
 }
 ```
+
+Even at one block every second, it will take a few minutes to build up enough
+GAS to complete this quickstart. Now is a good time for a coffee break.
 
 Wait until there is over 1000 GAS in the unavailable bucket - that will be plenty
 to experiment with smart contract deployment and invocation. However, in order to
@@ -270,7 +308,7 @@ access the GAS, we need to execute another transfer, this time from and to the
 testWallet account.
 
 ``` shell
-$ neo-express transfer neo 100000000 testWallet testWallet
+$ neo-express transfer neo all testWallet testWallet
 < transfer output omitted for clarity >
 
 $ neo-express show gas testWallet
@@ -309,23 +347,26 @@ $ neo-express show account testWallet
 ## Deploy a Smart Contract to Neo-Express blockchain
 
 With a running Neo-Express blockchain and a standard wallet account with plenty
-of GAS, we can deploy our smart contract to the blockchain. We start by importing
-the contract into Neo-Express.
+of GAS, we can deploy our smart contract to the blockchain. When calling `contract
+deploy` you must specify a wallet account to pay the deployment GAS price.
+
+> Note, in previous versions of neo-express, there was an extra `contract import`
+> step. This was removed in v0.9.
 
 ``` shell
-$ neo-express contract import bin/Debug/netstandard2.0/publish/
+$ neo-express contract deploy bin/Debug/netstandard2.0/publish/HelloWorld.avm testWallet
 Does this contract use storage? [y/N] y
 Does this contract use dynamic invoke? [y/N] n
-Is this contract payable? [y/N] n
 ```
 
-Neo-Express needs to know if the contract uses storage, dynamic invoke or if
-the contract is payable in order to deploy the contract.
+Neo-Express needs to know if the contract uses storage or dynamic invoke in order
+to deploy the contract. In the future, this information will be emitted
+by the compiler. For now, neo-express has to ask the user.
 
 > For Neo 3, this information will be in the smart contract manifest file.
 
 The imported contract can now be deployed via the `contract deploy` command.
-You must specify a wallet account to pay the deployment GAS price. You can get
+ You can get
 information about deployed contracts via the `contract get` command. 
 
 ``` shell
@@ -368,6 +409,11 @@ $ neo-express contract get HelloWorld
 ```
 
 ## Invoke a Smart Contract on the Neo-Express blockchain
+
+> Note, the contract invocation capabilities of neo-express are severely limited
+> due to the command line interface. A future version of the
+> [Neo Visual DevTracker](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-visual-devtracker)
+> will include the ability to invoke contracts via a graphical UI.
 
 The last step is to invoke the deployed contract. We use the `contract invoke`
 command for that.
