@@ -1,8 +1,6 @@
 <!-- markdownlint-enable -->
 # Neo Blockchain Toolkit for .NET Quickstart
 
-> Note, this quickstart has only been tested on Windows 10 and Ubuntu 18.04.
-
 ## Prerequisites
 
 > Note, both .NET core 2.2 and 3.0 are required.
@@ -14,6 +12,9 @@
 
 Ubuntu users must also install libsnappy-dev and libc6-dev via apt-get in order
 to use Neo-Express.
+
+macOS users must also install rocksdb via [Homebrew](https://brew.sh/) in order to use 
+Neo-Express.
 
 ## Installation
 
