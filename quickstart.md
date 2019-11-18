@@ -3,11 +3,6 @@
 
 > Note, this quickstart has only been tested on Windows 10 and Ubuntu 18.04.
 
-## Neo Blockchain Toolkit Samples
-
-* [Domain](https://github.com/ngdseattle/domain-sample)
-* [CNEO](https://github.com/ngdseattle/cneo-sample)
-
 ## Prerequisites
 
 > Note, both .NET core 2.2 and 3.0 are required.
@@ -469,3 +464,11 @@ $ neo-express contract storage helloWorld
         (as string) : World
   constant value    : False
 ```
+
+## Other Neo Blockchain Toolkit Samples
+
+Now that you've built and run the Hello, World! quickstart, here are some other Neo Blockchain Toolkit samples you can try out.
+
+* [Domain](https://github.com/ngdseattle/domain-sample)
+* [CNEO](https://github.com/ngdseattle/cneo-sample)
+* [Escrow](https://github.com/ngdseattle/escrow-sample)
