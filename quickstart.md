@@ -65,7 +65,7 @@ The tools should echo back the version number. It will look similar to this:
 
 ``` shell
 $ Neo Express --version
-1.0.4+d411befe6a
+1.0.7+391e234c56
 
 $ neon
 Neo.Compiler.MSIL console app v2.6.0.0
@@ -448,8 +448,8 @@ Toolkit will use reasonable defaults for these attributes if they are not specif
 You can get information about deployed contracts on the command line via the
 `contract get` command.
 
-> Note, inspecting deployed contracts will be coming in a future release of Neo
-> Visual DevTracker.
+> Note, inspecting deployed contracts from inside Visual Studio Code will be
+> coming in a future release of Neo Visual DevTracker.
 
 ``` shell
 $ neo-express contract get ./bin/Debug/netstandard2.0/HelloWorld.avm
@@ -473,64 +473,62 @@ $ neo-express contract get ./bin/Debug/netstandard2.0/HelloWorld.avm
 
 ## Invoke a Smart Contract on the Neo Express blockchain
 
-The final step of the quickstart is to invoke the deployed contract.
+Now that we've deployed the contract to our Neo Express blockchain, we can now invoke
+it. Select Invoke Contract from the Neo Express context menu to bring up the Invoke
+Contract panel.
 
 > Note, you can invoke a contract from the command line via the `contract invoke`
 > command. However, the command line contract invocation capabilities are severely
 > limited due to the command line interface. A future version of Neo Blockchain Toolkit
 > will address this limitation.
 
+ Neo Visual DevTracker will search the workspace for all contracts as well as all
+ operations on those contracts. Our workspace has only a single contract with a
+ single operation, so expand the Smart Contracts, Contract: HelloWorld and Method:
+ Main nodes to bring up the invocation UI for main entry point of our HelloWorld
+ contract.
 
+![Invoke Contract Panel](quickstart-images/invoke-contract.png)
 
+> Note, the Hello World contract has no parameters. If it did, the Invoke Contract
+> panel would have additional input fields for specifying the parameter values.
 
-The last step is to invoke the deployed contract. We use the `contract invoke`
-command for that.
+This UI is complex as it support multiple launch mechanisms. The differences are
+detailed at the bottom of the Launch Contract panel. For the quickstart, we are
+going to use the "Broadcast invocation transaction". This is the only option that
+will update the blockchain with the results of the contract invocation. In order
+to invoke the contract, we need to provide a wallet that will pay the GAS cost
+of the contract invocation. Select testWallet from the dropdown and press the
+"Broadcast invocation transaction" button. Like we've seen earlier, we will be
+presented with a link to the invocation transaction detail page. At the bottom of
+the transaction detail page, we can see the application log for the invocation
+in JSON format.
 
-``` shell
-$ Neo Express contract invoke HelloWorld
-{
-  "engine-state": {
-    "state": 1,
-    "gas-consumed": "1.017",
-    "result-stack": []
-  }
-}
+``` json
+[
+    {
+        "contract": "0x750a640a519d64ddc89740a80841c357bf1981c7",
+        "gas_consumed": "1.017",
+        "notifications": [],
+        "stack": [],
+        "trigger": "Application",
+        "vmstate": "HALT"
+    }
+]
 ```
 
 > Note, the Hello World contract has no return value. If it did, we would see
-> it in the result-stack property.
-
-Invoking a smart contract without specifying a wallet account to pay the invocation
-GAS cost will not modify the state of the blockchain. For the HelloWorld contract,
-that means that nothing will be written to blockchain storage. If you wish for a
-contract invocation to make durable changes, you can specify a wallet account to
-pay the GAS cost via the --account argument.
-
-``` shell
-$ Neo Express contract invoke HelloWorld --account testWallet
-{
-  "contract-context": < omitted for clarity >
-  "script-hashes": < omitted for clarity >
-  "hash-data": < omitted for clarity >
-  "engine-state": {
-    "state": 1,
-    "gas-consumed": "1.017",
-    "result-stack": []
-  }
-}
-{
-  "txid": "0x785346a3a338d70dd5bee6a70e1fc807a891d23a8d12d138b6a151b5eeae771e"
-}
-```
+> it in the stack property.
 
 The HelloWorld contract takes no parameter and it returns no values. However,
 it does modify contract storage in the blockchain. You can dump the storage
-state for a given contract with the `contract storage` command. This command
-lists all the key/value pairs in the blockchain, showing both keys and values
-as both a hex-encoded byte array as well as a UTF-8 encoded string.
+state for a given contract from the command line with the Neo Express `contract
+storage` command. This command lists all the key/value pairs for a given contract
+in the blockchain, showing both keys and values as both a hex-encoded byte array
+as well as a UTF-8 encoded string.
 
 ``` shell
-$ Neo Express contract storage helloWorld
+$ neo-express contract storage ./bin/Debug/netstandard2.0/HelloWorld.avm
 0x48656c6c6f
   key (as string)   : Hello
   value (as bytes)  : 0x576f726c64
@@ -538,9 +536,13 @@ $ Neo Express contract storage helloWorld
   constant value    : False
 ```
 
+> Note, inspecting contract storage from inside Visual Studio Code will be
+> coming in a future release of Neo Visual DevTracker.
+
 ## Other Neo Blockchain Toolkit Samples
 
-Now that you've built and run the Hello, World! quickstart, here are some other Neo Blockchain Toolkit samples you can try out.
+Now that you've built and run the HelloWorld quickstart, here are some other Neo
+Blockchain Toolkit samples you can try out.
 
 * [Domain](https://github.com/ngdseattle/domain-sample)
 * [CNEO](https://github.com/ngdseattle/cneo-sample)
