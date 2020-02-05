@@ -4,7 +4,7 @@
 ## Prerequisites
 
 * [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-* [Visual Studio Code (v1.37 or later)](https://code.visualstudio.com/Download)
+* [Visual Studio Code (v1.40 or later)](https://code.visualstudio.com/Download)
 
 > Note, .NET Core needs to be installed even if you don't plan to write smart
 > contracts in a .NET language like C#.
