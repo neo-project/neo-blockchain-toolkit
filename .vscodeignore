@@ -5,4 +5,5 @@ gulpfile.ts
 azure-ci.yml
 version.json
 quickstart.md
+quickstart-images/**
 visual-devtracker-1.png
