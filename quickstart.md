@@ -89,7 +89,7 @@ The template "Neo Smart Contract" was created successfully.
 
 ## Build the Smart Contract
 
-You can immediately build the smart contract via the `dotnet publish` command.
+You can immediately build the smart contract via the `dotnet build` command.
 The result should look something like this:
 
 ``` shell
