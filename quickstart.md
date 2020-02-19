@@ -60,11 +60,11 @@ If this is the first time you've used
 [.NET Core global tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools),
 you will need to shutdown your terminal windows and reopen it. You may need to
 log out completely and log back in again. Make sure the tools are correctly installed
-and your path is correctly set up by running `Neo Express --version` and `neon`.
+and your path is correctly set up by running `neo-express --version` and `neon`.
 The tools should echo back the version number. It will look similar to this:
 
 ``` shell
-$ Neo Express --version
+$ neo-express --version
 1.0.7+391e234c56
 
 $ neon
@@ -216,7 +216,7 @@ By default, a single consensus node Neo Express blockchain is created, but you c
 specify a four or seven consensus node blockchain via the `--count` argument.
 
 ``` shell
-$ Neo Express create
+$ neo-express create
 Created 1 node privatenet at ~/HelloWorld/default.Neo Express.json
     Note: The private keys for the accounts in this file are are *not* encrypted.
           Do not use these accounts on MainNet or in any other system where security is a concern.
@@ -252,7 +252,7 @@ Then open a terminal window in your contract folder to execute the `run` command
 > running inside Visual Studio Code".
 
 ``` shell
-$ Neo Express run --seconds-per-block 1
+$ neo-express run --seconds-per-block 1
 09:49:37.99 ConsensusService Info OnStart
 09:49:38.08 ConsensusService Info initialize: height=1 view=0 index=0 role=Primary
 09:49:38.15 ConsensusService Info timeout: height=1 view=0
