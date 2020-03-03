@@ -2,7 +2,7 @@
     "name": "neo-blockchain-toolkit",
     "publisher": "ngd-seattle",
     "displayName": "Neo Blockchain Toolkit",
-    "description": "Collection of Neo blockchain Visual Studio Code extensions",
+    "description": "Develop, debug, test, deploy, track and manage your blockchain applications",
     "version": "0.0.0",
     "icon": "neo-logo-256.png",
     "galleryBanner": {
