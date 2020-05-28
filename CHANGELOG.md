@@ -13,6 +13,14 @@ will not have contiguous patch numbers. Initial major and minor releases will be
 in this file without a patch number. Patch version will be included for bug fix releases, but
 may not exactly match a publicly released version.
 
+## [1.1] - 2020-05-28
+
+### Changed
+
+- Neo Contract Debugger updated to v1.1 ([changelog](https://github.com/neo-project/neo-debugger/blob/master/src/extension/CHANGELOG.md#11---2020-05-28))
+- Neo Visual DevTracker updated to v1.1 ([changelog](https://github.com/neo-project/neo-visual-tracker/blob/master/CHANGELOG.md#11---2020-05-28))
+- Neo-express updated to v1.1 ([changelog](https://github.com/neo-project/neo-express/blob/master/changelog.md#11---2020-05-28))
+
 ## [1.0] - 2020-02-06
 
 ### Changed
