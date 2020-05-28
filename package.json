@@ -3,7 +3,7 @@
     "publisher": "ngd-seattle",
     "displayName": "Neo Blockchain Toolkit",
     "description": "Develop, debug, test, deploy, track and manage your blockchain applications",
-    "version": "0.0.0",
+    "version": "1.1.8-preview",
     "icon": "neo-logo-256.png",
     "galleryBanner": {
         "color": "#242424",
@@ -33,15 +33,12 @@
         "ngd-seattle.neo-contract-debug"
     ],
     "scripts": {
-        "package": "npm run setversion && vsce package",
+        "package": "gulp setversion && vsce package",
         "setversion": "gulp setversion"
     },
     "devDependencies": {
-        "@types/gulp": "^4.0.6",
-        "gulp": "4.0.0",
-        "nerdbank-gitversioning": "^3.0.26",
-        "ts-node": "^8.3.0",
-        "typescript": "^3.3.1",
-        "vsce": "^1.69.0"
+        "gulp": "4.0.2",
+        "nerdbank-gitversioning": "^3.1.91",
+        "vsce": "^1.75.0"
     }
 }
