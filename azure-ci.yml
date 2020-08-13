@@ -27,18 +27,9 @@ steps:
   inputs:
     command: 'ci'
 
-- task: Npm@1
-  displayName: 'npm run package'
-  inputs:
-    command: 'custom'
-    customCommand: 'run package'
-
-- task: CopyFiles@2
-  displayName: 'copy VSIX package to Artifact Staging Directory'
-  inputs:
-    SourceFolder: '.'
-    Contents: '*.vsix'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/extension'
+- script: |
+    npx gulp setversion
+    npx vsce package --out '$(Build.ArtifactStagingDirectory)/extension'
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish vsix build artifacts'
