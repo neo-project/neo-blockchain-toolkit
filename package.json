@@ -38,7 +38,7 @@
     },
     "devDependencies": {
         "gulp": "4.0.2",
-        "nerdbank-gitversioning": "^3.1.91",
-        "vsce": "^1.75.0"
+        "nerdbank-gitversioning": "^3.2.31",
+        "vsce": "^1.78.0"
     }
 }

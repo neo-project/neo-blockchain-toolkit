@@ -1,8 +1,11 @@
 variables:
-  configuration: release
+  isMasterBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
+  isReleaseBranch: $[startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')]
+  azureArtifactsBranch: $[or(eq(variables.isMasterBranch, true), eq(variables.isReleaseBranch, true))]
+  nugetOrgBranch: $[eq(variables.isReleaseBranch, true)]
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'ubuntu-latest'
 
 trigger:
   batch: false
@@ -22,7 +25,7 @@ steps:
 - task: Npm@1
   displayName: 'npm install'
   inputs:
-    command: 'install'
+    command: 'ci'
 
 - task: Npm@1
   displayName: 'npm run package'
