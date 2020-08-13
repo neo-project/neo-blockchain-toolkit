@@ -1,8 +1,6 @@
 variables:
   isMasterBranch: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')]
   isReleaseBranch: $[startsWith(variables['Build.SourceBranch'], 'refs/heads/release/')]
-  azureArtifactsBranch: $[or(eq(variables.isMasterBranch, true), eq(variables.isReleaseBranch, true))]
-  nugetOrgBranch: $[eq(variables.isReleaseBranch, true)]
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -20,19 +18,39 @@ trigger:
     - 'readme.md'
     - 'docs/*'
 
-steps:
-
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    command: 'ci'
-
-- script: |
-    npx gulp setversion
-    npx vsce package --out '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  displayName: 'publish vsix build artifacts'
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'VSIX-package'
+stages:
+- stage: build
+  jobs:
+  - job:
+    pool:
+      vmImage: 'ubuntu-latest'
+    workspace:
+      clean: all
+    steps:
+    - task: Npm@1
+      displayName: 'npm install'
+      inputs:
+        command: 'ci'
+    - script: |
+        npx gulp setversion
+        npx vsce package --out '$(Build.ArtifactStagingDirectory)'
+    - task: PublishBuildArtifacts@1
+      displayName: 'publish vsix build artifacts'
+      inputs:
+        pathToPublish: '$(Build.ArtifactStagingDirectory)'
+        artifactName: 'VSIX-package'
+- stage: publishInMarketplace
+  dependsOn: build
+  condition: and(succeeded(), eq(variables.isReleaseBranch, true))
+  jobs:
+    - deployment: 
+      pool:
+        vmImage: 'ubuntu-latest'
+      environment: 'vscode-marketplace'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - pwsh: npx vsce publish --pat $env:MAPPED_PAT --packagePath '$(Pipeline.Workspace)'
+                env:
+                  MAPPED_PAT: $(ngdseaPAT)
