@@ -29,10 +29,10 @@ steps:
 
 - script: |
     npx gulp setversion
-    npx vsce package --out '$(Build.ArtifactStagingDirectory)/extension'
+    npx vsce package --out '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish vsix build artifacts'
   inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)/extension'
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'VSIX-package'
