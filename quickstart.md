@@ -493,7 +493,7 @@ Contract panel.
 > Note, the Hello World contract has no parameters. If it did, the Invoke Contract
 > panel would have additional input fields for specifying the parameter values.
 
-This UI is complex as it support multiple launch mechanisms. The differences are
+This UI is complex as it supports multiple launch mechanisms. The differences are
 detailed at the bottom of the Launch Contract panel. For the quickstart, we are
 going to use the "Broadcast invocation transaction". This is the only option that
 will update the blockchain with the results of the contract invocation. In order
