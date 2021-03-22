@@ -13,6 +13,12 @@ will not have contiguous patch numbers. Initial major and minor releases will be
 in this file without a patch number. Patch version will be included for bug fix releases, but
 may not exactly match a publicly released version.
 
+## [2.0-preview] - 2021-03-24
+
+## Added
+
+- Added Neo 3 Visual DevTracker to extension pack
+
 ## [1.1] - 2020-05-28
 
 ### Changed
