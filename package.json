@@ -31,7 +31,7 @@
     ],
     "extensionPack": [
         "ngd-seattle.neo-visual-devtracker",
-        "ngd-seattle.neo3-visual-devtracker",
+        "ngd-seattle.neo3-visual-tracker",
         "ngd-seattle.neo-contract-debug"
     ],
     "scripts": {

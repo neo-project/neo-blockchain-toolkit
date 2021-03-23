@@ -1,6 +1,7 @@
 .vscode/**
 .vscode-test/**
 .gitignore
+.tools/**
 gulpfile.ts
 azure-ci.yml
 version.json
