@@ -36,7 +36,7 @@ Toolkit is by navigating to
 [its official Marketplace page](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-blockchain-toolkit)
 and clicking the green Install button.
 
-THe Neo Blockchain Toolkit is an extension pack containing two extensions:
+The Neo Blockchain Toolkit is an extension pack containing two extensions:
 the [Neo Smart Contract Debugger](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-contract-debug)
 and the [Neo Visual DevTracker](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-visual-devtracker).
 While these extensions can be installed separately, it's usually easier to install
