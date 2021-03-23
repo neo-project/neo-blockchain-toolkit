@@ -13,6 +13,7 @@
 - **One-IDE** : Built-in real world PrivateNet with frictionless
   edit-build-debug-deployment enhancements to ensure consistency across PrivateNet,
   TestNet and MainNet
+- **N3 Preview Support**: Supports [Neo N3 and Neo Legacy](https://medium.com/neo-smart-economy/introducing-neo-n3-the-next-evolution-of-the-neo-blockchain-b2960c4def6e)
 
 ## Getting Started
 
