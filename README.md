@@ -17,8 +17,11 @@
 
 ## Getting Started
 
-Please see the [Neo Blockchain Toolkit Quickstart](https://github.com/neo-project/neo-blockchain-toolkit/blob/master/quickstart.md)
-for instructions on setting up the tools and creating your first Neo smart contract.
+Please see the [N3 Tutorials](https://ngdenterprise.com/neo-tutorials/) site for quick start
+videos and real world tutorials on using the latest version of the Neo Blockchain Toolkit.
+
+For developers targeting Neo Legacy, please see the [Neo Blockchain Toolkit Quickstart](https://github.com/neo-project/neo-blockchain-toolkit/blob/master/quickstart.md)
+for instructions on setting up the tools and creating your first Neo Legacy smart contract.
 
 ## Key Components
 

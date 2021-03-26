@@ -1,6 +1,8 @@
 <!-- markdownlint-enable -->
 # Neo Blockchain Toolkit for .NET Quickstart
 
+> Note: this Quickstart is for developers targeting [Neo Legacy](https://medium.com/neo-smart-economy/introducing-neo-n3-the-next-evolution-of-the-neo-blockchain-b2960c4def6e). Developers developers targeting N3 should check out the new [N3 Tutorials](https://ngdenterprise.com/neo-tutorials/) site instead.
+
 ## Prerequisites
 
 * [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
