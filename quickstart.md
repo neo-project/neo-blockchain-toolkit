@@ -62,15 +62,15 @@ If this is the first time you've used
 [.NET Core global tools](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools),
 you will need to shutdown your terminal windows and reopen it. You may need to
 log out completely and log back in again. Make sure the tools are correctly installed
-and your path is correctly set up by running `neo-express --version` and `neon`.
+and your path is correctly set up by running `neoxp --version` and `neon`.
 The tools should echo back the version number. It will look similar to this:
 
 ``` shell
-$ neo-express --version
-1.0.7+391e234c56
+$ neoxp --version
+3.0.5+937c42bad1
 
 $ neon
-Neo.Compiler.MSIL console app v2.6.0.0
+Neo.Compiler.MSIL console app v2.6.2.0
 You need a parameter to specify the DLL or the file name of the project.
 Examples:
   neon mySmartContract.dll
@@ -96,12 +96,12 @@ The result should look something like this:
 
 ``` shell
 $ dotnet build
-Microsoft (R) Build Engine version 16.4.0+e901037fe for .NET Core
+Microsoft (R) Build Engine version 16.10.2+857e5a733 for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Restore completed in 182.74 ms for ~/HelloWorld/HelloWorld.csproj.
   HelloWorld -> ~/HelloWorld/HelloWorld/bin/Debug/netstandard2.0/HelloWorld.dll
-  Neo.Compiler.MSIL console app v2.6.0.0
+  Neo.Compiler.MSIL console app v2.6.2.0
   Find entrypoint:System.Void HelloWorld::Main()
   convert succ
   gen abi succ
@@ -127,7 +127,7 @@ Studio Code in the folder you created the smart contract in.
 Before you can run the contract in the debugger, you need to create a launch
 configuration. The Neo Contract Debugger makes this very easy.
 
-* From the top-level Debug menu, select "Add Configuration"
+* From the top-level "Run" menu, select "Add Configuration"
 * From the Select Environment input box, select "Neo Contract"
 
 This will create a new launch.json file in the .vscode directory of your workspace.
@@ -161,7 +161,7 @@ contact in the last step, your launch.json file should look something like this
 
 This launch configuration allows you to specify a variety of values to control
 how your contract is executed. However, You don't need to change anything to run
-the HelloWorld contract. Simply select Debug -> Start Debugging from the menu bar
+the HelloWorld contract. Simply select "Run" -> "Start Debugging" from the menu bar
 or press "F5" to launch the HelloWorld contact for debugging. From here, the
 following debug experiences work:
 
@@ -218,7 +218,7 @@ By default, a single consensus node Neo Express blockchain is created, but you c
 specify a four or seven consensus node blockchain via the `--count` argument.
 
 ``` shell
-$ neo-express create
+$ neoxp create
 Created 1 node privatenet at ~/HelloWorld/default.Neo Express.json
     Note: The private keys for the accounts in this file are are *not* encrypted.
           Do not use these accounts on MainNet or in any other system where security is a concern.
@@ -254,7 +254,7 @@ Then open a terminal window in your contract folder to execute the `run` command
 > running inside Visual Studio Code".
 
 ``` shell
-$ neo-express run --seconds-per-block 1
+$ neoxp run --seconds-per-block 1
 09:49:37.99 ConsensusService Info OnStart
 09:49:38.08 ConsensusService Info initialize: height=1 view=0 index=0 role=Primary
 09:49:38.15 ConsensusService Info timeout: height=1 view=0
@@ -332,9 +332,9 @@ Alternatively, you can create a wallet from the command line via the `wallet cre
 command.
 
 ``` shell
-$ neo-express wallet create testWallet
+$ neoxp wallet create testWallet
 testWallet
-        AZDRabBcW4eESVfh9ssLd6udza9xpPn1P6
+        Nb2ASQn4qNyTnS9MYg7sAkeXXnPffayx4b
     Note: The private keys for the accounts in this wallet are *not* encrypted.
           Do not use these accounts on MainNet or in any other system where security is a concern.
 ```
@@ -403,7 +403,7 @@ Assets workflow to transfer all of the testWallet NEO to itself. In order to exp
 with deploying and invoking smart contracts, you'll need around 1000 GAS.
 
 > Note, you can see how much GAS is available for a given account on the command
-> line with the `show gas` command. You an claim GAS on the command line with the
+> line with the `show gas` command. You can claim GAS on the command line with the
 > `claim gas` command.
 
 ## Deploy a Smart Contract to Neo Express blockchain
@@ -454,7 +454,7 @@ You can get information about deployed contracts on the command line via the
 > coming in a future release of Neo Visual DevTracker.
 
 ``` shell
-$ neo-express contract get ./bin/Debug/netstandard2.0/HelloWorld.avm
+$ neoxp contract get ./bin/Debug/netstandard2.0/HelloWorld.avm
 {
   "version": 0,
   "hash": "0x505d2e13ff4a4cf1c368ed2af7f7aad5720f4c38",
@@ -530,7 +530,7 @@ in the blockchain, showing both keys and values as both a hex-encoded byte array
 as well as a UTF-8 encoded string.
 
 ``` shell
-$ neo-express contract storage ./bin/Debug/netstandard2.0/HelloWorld.avm
+$ neoxp contract storage ./bin/Debug/netstandard2.0/HelloWorld.avm
 0x48656c6c6f
   key (as string)   : Hello
   value (as bytes)  : 0x576f726c64
