@@ -2,7 +2,7 @@
 # Neo Blockchain Toolkit
 
 [![Build Status](https://dev.azure.com/NGDSeattle/Public/_apis/build/status/neo-project.neo-blockchain-toolkit?branchName=master)](https://dev.azure.com/NGDSeattle/Public/_build/latest?definitionId=25&branchName=master)
-[![](https://vsmarketplacebadge.apphb.com/version-short/ngd-seattle.neo-blockchain-toolkit.svg)](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-blockchain-toolkit)
+[![](https://vsmarketplacebadges.dev/version-short/ngd-seattle.neo-blockchain-toolkit.svg)](https://marketplace.visualstudio.com/items?itemName=ngd-seattle.neo-blockchain-toolkit)
 
 ## Key Benefits
 

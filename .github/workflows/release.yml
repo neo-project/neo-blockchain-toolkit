@@ -5,24 +5,23 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: ⏳ Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: 💿 Setup NodeJS
-        uses: actions/setup-node@v1
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
         with:
-          node-version: 12.x
-      - name: 💿 Setup .NET Core SDK
-        uses: actions/setup-dotnet@v1.7.2
+          dotnet-version: '6.0.x'
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          dotnet-version: 3.1.x
-      - name: Install nbgv
-        run: dotnet tool install nbgv --tool-path ./.tools --version 3.3.37
-      - name: Run nbgv
-        run: echo "NUGET_PACKAGE_VERSION=$(./.tools/nbgv get-version -v NuGetPackageVersion)" >> $GITHUB_ENV
+          node-version: 'lts/*'
+      - id: nbgv
+        name: Setup Nerdbank.GitVersioning
+        uses: dotnet/nbgv@v0.4.0
       - name: npm install
         run: npm ci
       - name: 🔢 Set version
@@ -40,8 +39,8 @@ jobs:
         uses: marvinpinto/action-automatic-releases@v1.1.1
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: ${{ contains(env.NUGET_PACKAGE_VERSION, '-preview') }}
-          title: Release ${{ env.NUGET_PACKAGE_VERSION }}
-          automatic_release_tag: ${{ env.NUGET_PACKAGE_VERSION }}
+          prerelease: ${{ contains(steps.nbgv.outputs.NpmPackageVersion, '-preview') }}
+          title: Release ${{ steps.nbgv.outputs.NpmPackageVersion }}
+          automatic_release_tag: ${{ steps.nbgv.outputs.NpmPackageVersion }}
           files: |
             *.vsix
