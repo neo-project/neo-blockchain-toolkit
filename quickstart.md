@@ -135,11 +135,11 @@ The Neo Contract Debugger will automatically add a configuration to the launch.j
 file for every .AVM file it locates in the workspace. Since we compiled the HelloWorld
 contact in the last step, your launch.json file should look something like this
 
+    # Use IntelliSense to learn about possible attributes.
+    # Hover to view descriptions of existing attributes.
+    # For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 ``` json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -177,7 +177,7 @@ following debug experiences work:
 ## Create a Neo Express blockchain
 
 > Note, In addition to this quickstart, there is also a
-> [command reference document](https://github.com/neo-project/Neo Express/blob/master/docs/command-reference.md)
+> [command reference document](https://github.com/neo-project/Neo-Express/blob/master/docs/command-reference.md)
 > for Neo Express.
 
 Now that we have a smart contract, we need a blockchain to deploy it to. Neo Express
@@ -546,6 +546,7 @@ $ neo-express contract storage ./bin/Debug/netstandard2.0/HelloWorld.avm
 Now that you've built and run the HelloWorld quickstart, here are some other Neo
 Blockchain Toolkit samples you can try out.
 
-* [Domain](https://github.com/ngdseattle/domain-sample)
-* [CNEO](https://github.com/ngdseattle/cneo-sample)
-* [Escrow](https://github.com/ngdseattle/escrow-sample)
+* [Hello Oracle Sample](https://github.com/devhawk/neo-hello-oracles-sample)
+* [Fungible Token Sample](https://github.com/devhawk/neo-fungible-token-sample)
+* [Registrar Sample](https://github.com/devhawk/neo-registrar-sample)
+* [Domain Sample](https://github.com/devhawk/domain-sample)
