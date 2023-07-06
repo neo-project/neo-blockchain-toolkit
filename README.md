@@ -17,7 +17,7 @@
 
 ## Getting Started
 
-Please see the [N3 Tutorials](https://ngdenterprise.com/neo-tutorials/) site for quick start
+Please see the [N3 Tutorials](https://developers.neo.org/tutorials/2021/05/27/getting-started-with-the-neo-blockchain-toolkit) site for quick start
 videos and real world tutorials on using the latest version of the Neo Blockchain Toolkit.
 
 For developers targeting Neo Legacy, please see the [Neo Blockchain Toolkit Quickstart](https://github.com/neo-project/neo-blockchain-toolkit/blob/master/quickstart.md)
